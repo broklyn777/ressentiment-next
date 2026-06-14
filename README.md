@@ -15,7 +15,7 @@ npm run dev
 ## Struktur
 
 - `app/` innehåller App Router-sidor.
-- `content/blog/` innehåller MDX-inlägg med frontmatter.
+- `content/blog/` innehåller MDX-inlägg med frontmatter. Inlägg publiceras som rot-URL:er, exempelvis `/ressentiment-idag`.
 - `components/` innehåller återanvändbara UI-komponenter.
 - `public/images/nietzsche-hero.png` är den genererade hero-bilden.
 

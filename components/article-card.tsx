@@ -4,7 +4,7 @@ import type { BlogPost } from "@/lib/blog";
 export function ArticleCard({ post }: { post: BlogPost }) {
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/${post.slug}`}
       className="group block rounded-lg border border-zincLine bg-chalk p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-calm"
     >
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blood">{post.readingTime}</p>

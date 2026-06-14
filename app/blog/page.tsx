@@ -1,4 +1,4 @@
-import { ArticleCard } from "@/components/article-card";
+import { BlogSearch } from "@/components/blog-search";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata = {
@@ -18,11 +18,7 @@ export default function BlogPage() {
           Korta, läsbara texter som gör Nietzsches begrepp användbart utan att släta ut dess
           obekväma kanter.
         </p>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <ArticleCard key={post.slug} post={post} />
-          ))}
-        </div>
+        <BlogSearch posts={posts} />
       </section>
     </main>
   );
