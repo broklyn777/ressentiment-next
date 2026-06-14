@@ -80,34 +80,47 @@ export function BlogSearch({ posts }: { posts: BlogPost[] }) {
       </p>
 
       {groupedResults.length > 0 ? (
-        <div className="mt-8 space-y-10">
+        <div className="mt-8 space-y-12">
           {groupedResults.map((group) => (
-            <section key={group.id} aria-labelledby={`search-group-${group.id}`}>
-              <div className="border-b border-zincLine pb-3">
-                <h2
-                  id={`search-group-${group.id}`}
-                  className="font-serif text-2xl leading-tight text-ink"
-                >
-                  {group.label}
-                </h2>
-                <p className="mt-1 text-sm leading-6 text-ink/58">{group.description}</p>
+            <section
+              key={group.id}
+              aria-labelledby={`search-group-${group.id}`}
+              className="rounded-lg border border-zincLine bg-chalk/55 p-4 md:p-5"
+            >
+              <div className="flex flex-col gap-2 border-b border-zincLine pb-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-blood/80">
+                    {group.items.length === 1 ? "1 träff" : `${group.items.length} träffar`}
+                  </p>
+                  <h2
+                    id={`search-group-${group.id}`}
+                    className="mt-1 font-sans text-sm font-bold uppercase tracking-[0.18em] text-ink/70"
+                  >
+                    {group.label}
+                  </h2>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-ink/55 md:text-right">
+                  {group.description}
+                </p>
               </div>
-              <div className="divide-y divide-zincLine">
+              <div className="mt-2 divide-y divide-zincLine/80">
                 {group.items.map((item) => (
                   <Link
                     key={item.id}
                     href={item.href}
-                    className="group block py-5 transition hover:pl-2"
+                    className="group block rounded-md px-1 py-4 transition hover:bg-paper md:px-3"
                   >
                     <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-                      <h3 className="font-serif text-2xl leading-tight text-ink group-hover:text-blood">
+                      <h3 className="font-serif text-xl leading-tight text-ink group-hover:text-blood md:text-[1.35rem]">
                         {item.title}
                       </h3>
-                      <span className="text-sm font-semibold text-ink/45 group-hover:text-blood">
+                      <span className="text-xs font-semibold uppercase tracking-[0.12em] text-ink/38 group-hover:text-blood">
                         {item.href}
                       </span>
                     </div>
-                    <p className="mt-2 max-w-3xl leading-7 text-ink/70">{item.description}</p>
+                    <p className="mt-2 max-w-3xl text-sm leading-6 text-ink/64 md:text-base">
+                      {item.description}
+                    </p>
                   </Link>
                 ))}
               </div>
