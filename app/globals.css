@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f7f1;
+  color: #161616;
+}
+
+::selection {
+  background: #8f1f2c;
+  color: #fbfcf7;
+}
+
+.prose-nietzsche {
+  color: #242424;
+}
+
+.prose-nietzsche h2,
+.prose-nietzsche h3 {
+  color: #161616;
+  font-family: var(--font-serif);
+  letter-spacing: 0;
+}
+
+.prose-nietzsche h2 {
+  margin-top: 2.5rem;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.prose-nietzsche h3 {
+  margin-top: 2rem;
+  font-size: 1.35rem;
+}
+
+.prose-nietzsche p,
+.prose-nietzsche li {
+  font-size: 1.075rem;
+  line-height: 1.8;
+}
+
+.prose-nietzsche a {
+  color: #8f1f2c;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.prose-nietzsche blockquote {
+  border-left: 4px solid #8f1f2c;
+  margin: 2rem 0;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  color: #3b3b3b;
+  font-style: italic;
+}
+
+.prose-nietzsche code {
+  background: #e8ebe1;
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.35rem;
+}
